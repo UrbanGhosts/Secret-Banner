@@ -1,0 +1,166 @@
+body{
+	background-color: #333333; /* Цвет фона веб-страницы */
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+} 
+h1 {
+	background-color: black; /* Цвет фона под заголовком */
+	color: white; /* Цвет текста */
+}
+p {
+	color: white; /* Цвет текста */
+	font-size: 20px;
+}
+.theme_container {
+	background-color: #292929;  /* Цвет фона зоны контента */
+	width:400px;
+	height: 450px;
+	margin-right: -10%;
+	margin-top: 60px;
+	max-width:400px;
+	max-height:600px;
+}
+.general_container {
+	background-color: #292929;  /* Цвет фона зоны контента */
+	width:810px;
+	height: 100vh;
+}
+.upload_file {
+	display: inline-block;
+}
+.upload_photo {
+	border: 1px dashed grey;
+}
+.img_file {
+	max-width:800px;
+	max-height:600px;
+}
+.upload_text {
+	padding-top: 40px;
+}
+.change_file {
+	color:DarkRed;
+	width:150px;
+}
+.blur_zone {
+	filter: blur(1.5rem);
+}
+.theme_zone {
+	background-color: #66FF00;  /* Цвет фона зоны контента */
+	position: relative;
+	z-index:3;
+	display: none;
+}
+.zone {
+	width:800px;
+	height:600px;
+}
+.cell_color {
+	background-color: #240000;  /* Цвет фона зоны контента */
+}
+.cell_black {
+	background-color: black;  /* Цвет фона зоны контента */
+	filter: blur(0.25rem);
+}
+.cell {
+	width:100px;
+	height:100px;
+	margin-left: 5%;
+	margin-bottom: 5%;
+	-webkit-border-radius: 50%; /* для Apple */
+	-moz-border-radius: 50%;    /* для Mozilla */
+	border-radius: 50%;         /* стандартный синтаксис */
+}
+.theme_row {
+	display: flex;
+}
+.color-pick {
+	width:100px;
+	height:100px;
+	overflow: hidden;
+	border-radius:100%;
+}
+input[type='color'] {
+	width:100%;
+	height:100%;
+	background: #292929;
+	transform: scale(1.5);
+}
+@keyframes gradient_icon{
+	0% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0 50%;
+	}
+}
+@keyframes gradient_zone{
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+.dropdown {
+	appearance: none; /* Убираем стандартный стиль */
+	background-color: transparent; /* Прозрачный фон */
+	background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+	linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+	linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+	animation: gradient_icon 10s infinite;
+	animation-timing-function: ease;
+	//animation-timing-function: linear;
+	margine: 0;
+	background-size: 110% 100%;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 200px;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.gradient-option {
+	cursor: pointer;
+	width:300px;
+	height:50px;
+}
+.tv-static {
+  background-image: repeating-conic-gradient(white, black 0.00085%);
+  animation: back 25s linear infinite;
+}
+.price_zone {
+  position: absolute;
+  top: 0%;
+  z-index:4;
+  font-size: 72px;
+  display: none;
+  text-shadow: 0 0 5px grey;
+  font-weight: bold;
+}
+@keyframes back {
+	from {
+		background-size: 100% 100%;
+	}
+	to {
+		background-size: 200% 200%;
+	}
+}
