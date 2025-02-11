@@ -1,5 +1,6 @@
 # Secret-Banner
 /* -------> ENG <------- */
+
 Secret banner is a tool that creates an additional opportunity for a streamer to interact with his community.
 
 How does this work: 
@@ -14,6 +15,7 @@ Mutually beneficial profit:
 - The streamer receives more attention and an additional opportunity to receive a donation
 
 /* -------> RUS <------- */
+
 Secret banner - это инструмент создающий дополнительную возможность взаимодействия стримера со своим комьюнити.
 
 Как это работает: 
