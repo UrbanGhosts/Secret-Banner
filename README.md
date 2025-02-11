@@ -1,4 +1,4 @@
-# Secret-Banner
+# Secret-Banner for Stremers
 /* -------> ENG <------- */
 
 Secret banner is a tool that creates an additional opportunity for a streamer to interact with his community.
