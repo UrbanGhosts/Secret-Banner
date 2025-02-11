@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Заголовок страницы</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="css/style.css" rel="stylesheet">
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<!-- Added -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<div id="general_container" class="general_container" align="center">
+			<p>Create your own secret.</p>
+			<div id="upload_photo" class="upload_photo zone" onmouseenter="mouselog(event)" onmouseleave="mouselog(event)">
+				<label for="upload_file" class="upload_file zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dropLeaveHandler(event);">
+					<img id="img_file" class="img_file" src="data:image/png;base64,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"/>
+					<div id="upload_text" class="upload_text">
+						<p>Drag and drop the image to be used in the application.</p>
+						<p>or</p>
+						<p id="change_file" class="change_file" onmouseenter="mouselog(event)" onmouseleave="mouselog(event)">Select file</p>
+						<p>This could be an image *.png, *.jpeg, *.jpg, *.gif, *.pdf.</p>
+					</div>
+					<input type="file" id="upload_file" style="display: none;" accept="image/*,.pdf" onchange="file_reader(event);"/>
+					<div id="theme_zone" class="theme_zone zone">
+						<img id="img_theme" class="img_theme" src=""/>
+					</div>
+					<div id="price_zone" class="price_zone zone">0/1000</div>
+				</label>
+			</div>
+			
+		</div>
+		<div id="theme_container" class="theme_container" align="center">
+			<p>Effects</p>
+			<div id="theme_row_1" class="theme_row">
+				<div id="theme_blur" class="blur_zone cell cell_black" type="button" onclick="theme_change(event)" onmouseenter="mouselog(event)" onmouseleave="mouselog(event)"></div>
+				<div class="color-pick cell">
+					<input id="theme_color" type="color" value="#240000" onclick="theme_change(event)" oninput="change_color(event)" onmouseenter="mouselog(event)" onmouseleave="mouselog(event)"></input>
+				 </div>
+				<div id="theme_remove" class="cell_color cell" type="button" onclick="theme_change(event)" onmouseenter="mouselog(event)" onmouseleave="mouselog(event)">
+					<img id="img_file" class="img_file" style="filter: invert(30%); margin-top:20%;" <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAzlJREFUaEPtmg1y0zAQhd2bwEmAkwAnKZwEOAlwErhJmzd4Z4St1b79Uew28YynSSPJ+vT2T0oelhu7Hm6Md7kDv3bF7woXK/xmWZaP65h43d5/1//jr7z+fWnzvXgO/w03Q2GBfL8sC27vJQvw49L/V7MY3nG67SuBBfRLycz+DQJ4QH+tAq8AngG6XTOAw9QBnrqywDDZn6kZ+DqnwTPAj5e5Vpovi56CjgJ/u/jUJ3aGk9phsd0mHgGGCUei7wxuqP3WM7AX+Eywwolg9pmF9gAf5bMMC23eLPC1ozED2baBacOfzSqNBX7yzuCA9pQ/M8BnNuXtupr+zAC/BHUFHCp/GJWhFnAm38oOCKWn54r2o6K2BRxVV/wJsEhlLHS03zaAIU1h07G7RsCopKCw99oGDxY62q83PzVNjYAjRYYWKS3oaD9NDKgLX3YpHDHnUdDQoEfpBH1gZd5SVh1TUzhqzlhRD/QMWFEVCu/8WAPORGcWGu20wj+qbGvCXT+eBcxAS/rZ+lkFLMbs+rEGHAlYvRhhFgKbTlWwbuA/jtxppS0WuhJWLGznMprCkQg9Aregq2FPATw6mbDytGVF2uc7QTWFq02aOYaphu6mvGsELQZWFKqEdkXpbB5WfWglk81ELzVVQXf3xprC2U0/U0EBTNu7VkC7gDNnWAys1MaeMtQbuLBF3J1xaQpjhRG4vJcHVsaeBd1lm7E97JmplWc16OjCq2dbsw4AWmgLVlM6CovxuuaMD0bAmQeKYniGZz/b9ou4lCweUmF3c2KdaWXSEx6IO7J5Z8/AejFmeFRrAWdU9ga8qvaqupZJywSyObkKhBnH/I7JUhgPqSgCmMlWtDF5zAbrLDJnXBUgzBjdM6xtRxYY/c5s2qYpC7gH+KzQ6hl0zyy8wGwRwZhgRRsXLBultxO7xu+ymMUwvxqtULgd40ifpn02E7R6C4YqCtVYpjJi1JQ2qNzUbwaZgbw+3BvzWiYeVrWddAWwjDcLvAQ0mpYYqwE4TB2/k/ZuHFrTLfkxabUPWwsg8O/Whngvt2zfZFcl790/J7QmMcukPc89rG2lDx8G4XnwHdizWi+x7c0p/Ayl8Mc95lebFQAAAABJRU5ErkJggg=="/>
+				</div>
+			</div>
+			<div id="theme_row_2" class="theme_row">
+				<div id="theme_gradient" class="dropdown cell" onclick="theme_change(event)">
+					<div class="dropdown-content">
+						<div id="theme_gradient_01" class="gradient-option" style="background: linear-gradient(to bottom right, blue, pink);"></div>
+						<div id="theme_gradient_02" class="gradient-option" style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(21,223,51,1) 51%, rgba(0,212,255,1) 100%);"></div>
+						<div id="theme_gradient_03" class="gradient-option" style="background: linear-gradient(to right, #FF4E50 0%, #F9D423  51%, #FF4E50  100%);"></div>
+						<div id="theme_gradient_04" class="gradient-option" style="background: linear-gradient(to right, #870000 0%, #190A05  51%, #870000  100%);"></div>
+						<div id="theme_gradient_05" class="gradient-option" style="background: linear-gradient(to right, #FDFC47 0%, #24FE41  51%, #FDFC47  100%);"></div>
+						<div id="theme_gradient_06" class="gradient-option" style="background: linear-gradient(to right, #ee9ca7 0%, Purple  100%);"></div>
+						<div id="theme_gradient_07" class="gradient-option" style="background: linear-gradient(160deg, #00d4ff 0%, MidnightBlue 100%);"></div>
+					</div>
+				</div>
+				<div id="theme_noise" class="cell tv-static" type="button" onclick="theme_change(event)" onmouseenter="mouselog(event)" onmouseleave="mouselog(event)"></div>
+				<label for="upload_theme" id="upload_theme_label" class="cell_color cell" onmouseenter="mouselog(event)" onmouseleave="mouselog(event)">
+						<img id="img_file" class="img_file" style="filter: invert(30%);margin-top:20%;" <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAsdJREFUaEPtmoFRwzAMRc0mMAkwCTAJMAkwCTAJbAL5Jb5zU9mSYkkNSXzXaw8cx8//S3YcX6SNlYuN8aYdeO2K7wobK3yZUrob28Tv8vM9/h3f+ffnUOfVuA9HzXkonCFvUkr4aEsegLfh+o9iMLTtkPUtgTPok0nP/hoBPKCfrcAtgD1Ap2MGcFgd4F2lFxiWfe/qge7ibvAe4Mehr5b2laJ3Qc8Ffhli6l7aQ6d6GGy1xecAw8Jzsq8HN9S+0jSsBV4SbOZEMnuQQmuAzxWzEhaxvaXA0dlYAlnWgbURz+wqTQr8o+3BGeqL4lkCbGllrJrwKcvcJSg1pmw8S4At1aVizXJAofJtaxnKAVvPt97AUL2pMgdsqS46EwEMlTFNTUPnEAItYKykoLBliQCuDSwL7LHIiAKGuojlk9JS2NrOUZbGfapTVA3Yw86RwLgXFD6J4xqwdXbO1oqydDWO1wxMxnENWJuwqBUUlTOwK0mttK4FU4F2RaYC/hq3VAX9OFQRP61IGyTqaVdkZOKqKazN0Dtwh5K1S7UKkwurmsKbs/TmktYa5mHyqalm6TnxIgnbyIWHCthrDysSGI+IJ3tcNYXxvgiJy7pEApNsraclbeKSDE4UcHXXY60bAKSdyYm5kMnD1lEK4/VLPlVw5DxuT8t6eooA7trEs1Y5AriqLmfpbAXLOdl7I559iOEsDWiojIyN76UXloetMBJ67XFZDiC5hzW9gRQY11la2xJUtQGhAV4qdHUPmhpVLTDiGFPVUo48qGClWXo6UBHnsiSWZ1+NWihctnHOmGann9qIaS09bQfWhsWjpqzmm0GJLXqB8zyNE7Peh9Rmq1oOhAVwbs8rtk1AcyctgUtwWB2qz83mXccLW9b2AC7vB9UBnV+ltA6I58c59XFCSex6Kqy5f3hdb4XDgbgb7sDcCP33/29O4V8hCqw9p9GLgwAAAABJRU5ErkJggg=="/>
+						<input type="file" id="upload_theme" style="display: none;" accept="image/*,.pdf" onchange="theme_change(event);"/>
+				</label>
+			</div>
+			<div id="theme_name" style="display: none;">none</div>
+		</div>
+	</body>
+</html>
