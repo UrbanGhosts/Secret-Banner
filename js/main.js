@@ -211,20 +211,7 @@ function start_farm() {
 	//setTimeout(() => get_donates(), 1000);
 }
 function auth_donates() {
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function () {
-		if (xhr.readyState === 4) {
-			window.console.log("xhr---", xhr);
-			window.console.log("body---", xhr.responseText);
-			//start_farm();
-		}
-	}
-	xhr.open('GET', 'https://www.donationalerts.com/oauth/authorize', true);
-	xhr.setRequestHeader('client_id', '14288');
-	xhr.setRequestHeader('redirect_uri', 'https://urbanghosts.github.io/Secret-Banner');
-	xhr.setRequestHeader('response_type', 'code');
-	xhr.setRequestHeader('scope', 'oauth-donation-index');
-	xhr.send();
+	window.console.log("-------->>", window.location);
 }
 function get_donates() {
 	var xhr = new XMLHttpRequest();
