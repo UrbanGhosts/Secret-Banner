@@ -214,8 +214,8 @@ function auth_donates() {
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4) {
-			window.console.log("xhr", xhr);
-			window.console.log("body", xhr.responseText);
+			window.console.log("xhr---", xhr);
+			window.console.log("body---", xhr.responseText);
 			//start_farm();
 		}
 	}
