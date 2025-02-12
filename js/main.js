@@ -204,7 +204,6 @@ function theme_change(ev) {
 function change_color(ev) {
 	//document.getElementById("theme_zone").style["background-color"] = ev.target.value;
 	document.getElementById("theme_zone").style.background = ev.target.value;
-	start_farm();
 }
 function start_farm() {
 	auth_donates();
