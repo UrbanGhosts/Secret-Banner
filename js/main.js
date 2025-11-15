@@ -74,6 +74,7 @@ function loadFile(file) {
 	fr.onload = function () {
 		var image = document.getElementById("img_file");
 		image.src = fr.result;
+		window.console.log("-------->>", image.src);
 		document.getElementById("upload_text").style.display = "none";
 		
 		
@@ -84,7 +85,7 @@ function loadFile(file) {
 					id: tag
 				}
 			};
-			theme_change(ev)
+			theme_change(ev);
 		};
 		
 		
@@ -210,7 +211,7 @@ function start_farm() {
 	//setTimeout(() => get_donates(), 1000);
 }
 function auth_donates() {
-	window.console.log("-------->>", window.location);
+	//todo
 }
 function get_donates() {
 	var xhr = new XMLHttpRequest();
@@ -224,4 +225,70 @@ function get_donates() {
 	xhr.open('GET', 'https://www.donationalerts.com/api/v1/alerts/donations', true);
 	xhr.setRequestHeader('Authorization', 'Bearer fLDZzLVr3TI5T2OHbZjl');
 	xhr.send();
+}
+
+
+/* ------------ Работа с БД ------------ */
+function load_profile() 
+{	
+	const xhr = new XMLHttpRequest();
+	const url = 'http://localhost:3000/api/getData?token=AA1E636E-3D57-48C1-B3D1-1620DE998AB3';
+
+	xhr.open('GET', url, true);
+
+	xhr.onreadystatechange = () => {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				if (xhr.responseText === "") return;
+				
+				const data = JSON.parse(xhr.responseText);				
+				
+				var image = document.getElementById("img_file");
+				image.src = data.Data.UserImage;
+				
+				document.getElementById("upload_text").style.display = "none";
+				
+				image.onload = function () {
+					var tag = document.getElementById("theme_name").innerHTML;
+					var ev = {
+						srcElement:{
+							id: tag
+						}
+					};
+					theme_change(ev);
+				};
+			} else {
+				window.console.log('Ошибка: ' + xhr.status);
+			}
+		}
+	};
+
+	xhr.send();
+}
+function save_profile() 
+{
+	var image = document.getElementById("img_file");	
+	
+	const xhr = new XMLHttpRequest();
+	const url = 'http://localhost:3000/api/saveData';
+	var data = JSON.stringify({"token": 'AA1E636E-3D57-48C1-B3D1-1620DE998AB3', "image": image.src});
+	
+	xhr.open('POST', url, true);
+
+	xhr.onreadystatechange = () => {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				if (xhr.responseText === ""){
+					window.console.log("-------->>", null);
+					return;
+				}
+				const data = JSON.parse(xhr.responseText);
+				window.console.log("-------->>", data);
+			} else {
+				window.console.log('Ошибка: ' + xhr.status);
+			}
+		}
+	};
+
+	xhr.send(data);
 }
